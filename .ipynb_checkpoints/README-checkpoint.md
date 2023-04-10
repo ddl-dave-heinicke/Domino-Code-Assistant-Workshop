@@ -45,7 +45,7 @@ In your Project, navigate to the Workspaces tab on the left, and select “Creat
 
 Select the IDE of your choice, and click Launch. The images in this tutorial use JupyterLab, so you may want to select JupyterLab to make it easier to  follow along. 
 
-Once your IDE is started up, craete a new Notebook:
+Once your IDE is started up, craete a new Notebook and rename it "DCA_Tutorial"
 
 <p align="center">
 <img src = readme_images/new_workspace.png width="800">
@@ -67,10 +67,22 @@ When you hover over the next cell in your Notebook, a blue DCA icon should appea
 
 DCA works similarly between Python notebooks and R Notebooks, but the UI is different. 
 
-Create a New Workspace, but choose R Studio as your IDE. 
+Create a new Workspace, but choose R Studio as your IDE. 
 
 Once R Studio is up and running, there is no need to initialize DCA, the DCA tools are already available in the Addins menu:
 
 <p align="center">
 <img src = readme_images/R_Init.png width="800">
 </p>
+
+## Section 2 - Expore Data Ingest
+
+There are many ways to load a dataset into your notebook using Code Assist. To get started, in the DCA Menu, select Load Data from the DCA menu ("DCA Load Data" for R Studio Users): 
+
+<p align="center">
+<img src = readme_images/DCA_menu_load_data.png width="800">
+</p>
+
+
+
+
