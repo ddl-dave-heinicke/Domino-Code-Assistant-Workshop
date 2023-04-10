@@ -98,3 +98,5 @@ For this tutorial, we’ll start with a small dataset in the project files saved
 <p align="center">
 <img src = readme_images/load_data.png width="800">
 </p>
+
+The new dataframe is svaed and avaialble for use.
