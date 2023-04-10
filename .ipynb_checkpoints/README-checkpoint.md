@@ -14,7 +14,9 @@ An introductory workshop to [Domino's Code Assistant](https://dominodatalab.gith
 * Load and create code snippets for future re-use
 * Build an app using Domino Code Assistant 
 
-## Section 1 - Setting Up Domimno Code Assistant
+## Section 1 - Setting Up Domimno Code Assistant (DCA)
+
+### 1.1 Installing Domimno Code Assistant (DCA)
 
 Domino Code Assistant is simply a Python packae or R package running in a Domino Workspace. 
 
@@ -33,4 +35,42 @@ For this lab, we'll use a Compute Environment  with DCA already installed, which
 <img src = readme_images/default_env.png width="800">
 </p>
 
-For details on how to install Domino Code Assistant in a Workspace or Project rather than environment, see the [DCA Documentation](https://dominodatalab.github.io/domino-code-assist-docs/latest/install/#install-in-a-workspace)
+For details on how to install Domino Code Assistant in a Workspace or Project rather than environment, see the [DCA Install Documentation](https://dominodatalab.github.io/domino-code-assist-docs/latest/install/#install-in-a-workspace)
+
+### 1.2 Initializing DCA in a Notebook: Python
+
+Now that we have a default Project environment with DCA pre-installed, create a new workspace.  
+
+In your Project, navigate to the Workspaces tab on the left, and select “Create New Workspace”. Leave the default Hardware Tier and Environment. 
+
+Select the IDE of your choice, and click Launch. The images in this tutorial use JupyterLab, so you may want to select JupyterLab to make it easier to  follow along. 
+
+Once your IDE is started up, craete a new Notebook:
+
+<p align="center">
+<img src = readme_images/new_workspace.png width="800">
+</p>
+
+Then click on the blue Domino Code Assist button on the toolbar to initialize the Code Assistant. 
+
+<p align="center">
+<img src = readme_images/DCA_init.png width="800">
+</p>
+
+When you hover over the next cell in your Notebook, a blue DCA icon should appear on the left. This is where we’ll access the DCA tools.
+
+<p align="center">
+<img src = readme_images/DCA-icon.png width="800">
+</p>
+
+### 1.2 Initializing DCA in a Notebook: R Studio
+
+DCA works similarly between Python notebooks and R Notebooks, but the UI is different. 
+
+Create a New Workspace, but choose R Studio as your IDE. 
+
+Once R Studio is up and running, there is no need to initialize DCA, the DCA tools are already available in the Addins menu:
+
+<p align="center">
+<img src = readme_images/R_Init.png width="800">
+</p>
