@@ -45,7 +45,7 @@ In your Project, navigate to the Workspaces tab on the left, and select “Creat
 
 Select the IDE of your choice, and click Launch. The images in this tutorial use JupyterLab, so you may want to select JupyterLab to make it easier to  follow along. 
 
-Once your IDE is started up, craete a new Notebook and rename it "DCA_Tutorial"
+Once your IDE is started up, craete a new Notebook and rename it "DCA_Tutorial.ipynb"
 
 <p align="center">
 <img src = readme_images/new_workspace.png width="800">
@@ -83,6 +83,18 @@ There are many ways to load a dataset into your notebook using Code Assist. To g
 <img src = readme_images/DCA_menu_load_data.png width="800">
 </p>
 
+**Data Sources** Domino Data Sources allow you to browse [Domino Data Sources](https://docs.dominodatalab.com/en/latest/user_guide/fbb41f/data-sources/) that have been added to your Project. These could include cloud data stores like S3 buckets, ADLS, BigQuery, Snowflake etc., on-prem data sources such as an Oracle Database, or Trino's distributed query engine. Domino Data sources are accessed at the user level, and read/write credentials are stored in your user account when the connector is set up in a Project.
 
+**Datasets** Domino Datasets are network file systems managed by Domino that can be snapshotted for reproducibility, and shared amongst users and / or projects. Domino Datasets are typically used for files that are too large to save in the project file system. 
 
+**Project Files** Project files are typically used for code, visuals, notebooks and smaller datasets (<10GB). These files are continuously versioned each time you sync your workspace. 
 
+**Upload** DCA uploads support drag-and-drop uploads local files from your machine such as CSV files or local directories. 
+
+**Quick Start** has some demo datasets for testing playing around with DCA.
+
+For this tutorial, we’ll start with a small dataset in the project files saved in the “data” folder. Note at the bottom that it saves this dataset as "df" - you may want to change this if you plan to bring in multiple datasets into your notebook.
+
+<p align="center">
+<img src = readme_images/load_data.png width="800">
+</p>
