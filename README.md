@@ -26,3 +26,11 @@ There are four distinct approaches to installing Domino Code Assist (DCA) for ei
 * Install from Source.
 
 The first approach is the easiest way to get started with DCA. But if you restart you workspace, then you will need to reinstall DCA. The second and third approaches will enable DCA more permanently.
+
+For this lab, we'll use a Compute Environment  with DCA already installed, which will be a Domino Standard Environment for Domino 5.5 or later. To ensure all workspaces have DCA pre-installed, go into the settings tab in your Project. Ensure the compute environment is set to a Domino 5.5+ environment: 
+
+<p align="center">
+<img src = readme_images/default_env.png width="800">
+</p>
+
+For details on how to install Domino Code Assistant in a Workspace or Project rather than environment, see the [DCA Documentation](https://dominodatalab.github.io/domino-code-assist-docs/latest/install/#install-in-a-workspace)
