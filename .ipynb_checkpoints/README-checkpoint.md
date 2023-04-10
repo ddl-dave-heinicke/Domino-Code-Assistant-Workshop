@@ -5,7 +5,7 @@ An introductory workshop to [Domino's Code Assistant](https://dominodatalab.gith
 
 [Balancing Mechanism Reporting Service](https://www.bmreports.com/bmrs/?q=help/about-us) is the primary channel for providing operational data relating to the GB Electricity Balancing and Settlement arrangements. It is used extensively by market participants to help make trading decisions and understanding market dynamics and acts as a prompt reporting platform as well as a means of accessing historic data. 
 
-#### In this workshop you will work through an end-to-end workflow broken into various labs to -
+#### In this workshop you will work through an end-to-end workflow to ingest, clean & vizualize data from BMRS:
 
 * Set up Domino Code Assist in your Project & Workspace
 * Explore Data Ingest with Code Assist
