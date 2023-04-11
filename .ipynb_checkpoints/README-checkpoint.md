@@ -75,7 +75,7 @@ Once R Studio is up and running, there is no need to initialize DCA, the DCA too
 <img src = readme_images/R_Init.png width="800">
 </p>
 
-## Section 2 - Expore Data Ingest
+## Section 2 - Data Ingest
 
 There are many ways to load a dataset into your notebook using Code Assist. To get started, in the DCA Menu, select Load Data from the DCA menu ("DCA Load Data" for R Studio Users): 
 
@@ -99,4 +99,40 @@ For this tutorial, we’ll start with a small dataset in the project files saved
 <img src = readme_images/load_data.png width="800">
 </p>
 
-The new dataframe is svaed and avaialble for use.
+## Section 3 - Data Transformations
+
+You’ll notice most observations are at a 30-minute interval, but we’ve got some entries at odd intervals that have missing values from some sources. We can filter out null values using the DCA’s Transformations feature.
+
+In a new cell in your notebook, mouse over the DCA icon on the right and select Transformations. If you mouse over individual cells, you’ll see a popup appear next to the cell that allows you to **“Filter values like this”**. Hover over the NaN value in the CCGT column, and select the filter:
+
+<p align="center">
+<img src = readme_images/filer_nan.png width="800">
+</p>
+
+Then, change the filter to **“!=”** NaN, and click **Apply**.
+
+<p align="center">
+<img src = readme_images/filter_nan_not_equal.png width="800">
+</p>
+
+If you scroll down to the bottom and toggle on **“Show Code”**, you can see the sample code that DCA has written. While you can always come back and edit this code, either manually or in the code assistant window, the preview is a handy feature for examining the sample code before inserting it into your notebook.
+
+<p align="center">
+<img src = readme_images/show_code.png width="800">
+</p>
+
+As a final step, go ahead and filter out the null values in the “OTHER” column in the spreadsheet. After applying the new transform, the following code should appear in the preview:
+
+```
+df = df.loc[df["CCGT"].notna()]
+df = df.loc[df["OTHER"].notna()]
+df
+```
+
+Go ahead and luck “Run” to insert the filtered null values.
+
+_Additional: Feel free to load a demo dataset such as Palmer Penguins to test out the other features, such as group-by and aggregate.
+
+You may be wondering if this method is inefficient for applying filters to really wide datasets with 100s columns - why not just use a method like df.dropna()? The answer is that you _should_ use features beyond what is offered out of the box with DCA. Code assist is just meant to be a starter, but you should feel free to build on features here, not be limited by the assistant. In fact, you can save commonly used code as custom snippets, which we’ll cover later. 
+
+
