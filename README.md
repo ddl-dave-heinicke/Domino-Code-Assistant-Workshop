@@ -75,7 +75,7 @@ Once R Studio is up and running, there is no need to initialize DCA, the DCA too
 <img src = readme_images/R_Init.png width="800">
 </p>
 
-## Section 2 - Expore Data Ingest
+## Section 2 - Data Ingest
 
 There are many ways to load a dataset into your notebook using Code Assist. To get started, in the DCA Menu, select Load Data from the DCA menu ("DCA Load Data" for R Studio Users): 
 
@@ -99,4 +99,6 @@ For this tutorial, we’ll start with a small dataset in the project files saved
 <img src = readme_images/load_data.png width="800">
 </p>
 
-The new dataframe is svaed and avaialble for use.
+## Section 3 - Data Transformations
+
+
