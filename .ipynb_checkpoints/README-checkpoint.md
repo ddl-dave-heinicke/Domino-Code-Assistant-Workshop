@@ -131,7 +131,7 @@ df
 
 Go ahead and luck “Run” to insert the filtered null values.
 
-_Additional: Feel free to load a demo dataset such as Palmer Penguins to test out the other features, such as group-by and aggregate.
+_Additional: Feel free to load a demo dataset such as Palmer Penguins to test out the other features, such as group-by and aggregate._
 
 You may be wondering if this method is inefficient for applying filters to really wide datasets with 100s columns - why not just use a method like df.dropna()? The answer is that you _should_ use features beyond what is offered out of the box with DCA. Code assist is just meant to be a starter, but you should feel free to build on features here, not be limited by the assistant. In fact, you can save commonly used code as custom snippets, which we’ll cover later. 
 
