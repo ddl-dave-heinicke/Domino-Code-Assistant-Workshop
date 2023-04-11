@@ -153,3 +153,4 @@ Inspect the code at the bottonm, then hit **Run**
 <img src = readme_images/area_plot.png width="800">
 </p>
 
+## Section 5 - Code Snippets
