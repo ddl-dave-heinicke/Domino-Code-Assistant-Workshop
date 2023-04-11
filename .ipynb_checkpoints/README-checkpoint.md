@@ -135,4 +135,21 @@ _Additional: Feel free to load a demo dataset such as Palmer Penguins to test ou
 
 You may be wondering if this method is inefficient for applying filters to really wide datasets with 100s columns - why not just use a method like `df.dropna()`? The answer is that you _should_ use features beyond what is offered out of the box with DCA. Code assist is just meant to be a starter, but you should feel free to build on features here, not be limited by the assistant. In fact, you can save commonly used code as custom snippets, which we’ll cover later. 
 
+## Section 4 - Data Transformations
+
+After cleaning up our data, the next step is to visualize it. 
+
+From the DCA menu, select **Visualizations**.
+
+Select the data frame name you saved the electric production data to, set the plot type to Area.
+
+Set the X-axis to “datetime” and the Y-axis to “CCGT” (or any column of your choice).
+
+Under Options, set the Theme to any you like.
+
+Inspect the code at the bottonm, then hit **Run**
+
+<p align="center">
+<img src = readme_images/area_plot.png width="800">
+</p>
 
