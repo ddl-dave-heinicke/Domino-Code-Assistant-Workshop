@@ -153,3 +153,95 @@ Inspect the code at the bottonm, then hit **Run**
 <img src = readme_images/area_plot.png width="800">
 </p>
 
+## Section 5 - Code Snippets
+
+So far, we have relied on DCA’s existing features to apply transforms or plot our data. But what if we want to do something DCA doesn’t do out of the box? For example, what if we want to do time-based aggregations, or plot electric production by source all on a single area plot?
+
+For these types of custom tasks, Domino Code Assist has code snippets. 
+
+### 5.1 Saving Snippets to a Project
+
+First, remember back to when we removed rows with null values. If we had many columns, and wanted to remove any row that had a null value in any column, we could use the following panda’s code:
+
+```
+df = df.dropna(axis=0, how='any')
+df
+```
+
+Copy the code above into the next empty cell. In the DCA menu, next to the last line **Insert Snippet**, click on the pencil icon to enable editing snippets. This allows you to add new code snippets to the code snippet library. 
+
+<p align="center">
+<img src = readme_images/enable_snippet.png width="800">
+</p>
+
+Click on **Save as Snippet**:
+
+<p align="center">
+<img src = readme_images/save_snippet.png width="800">
+</p>
+
+Give your snippet the name `drop_null_rows`, select the current project as your repository, and click **Add**. 
+
+To test it out, create a new Notebook, and repeat the first steps, but with the new snippet:
+
+1) Initialize code assist in the first cell
+2) Import app_data.csv from Project Files in the second cell
+3) Insert your new drop_null_rows code in the third cell
+
+<p align="center">
+<img src = readme_images/drop_null_example.png width="800">
+</p>
+
+### 5.2 Importing an Existing Snippet
+
+What if we wanted to plot production by all sources on the same area plot? We could write a function to stack the dataframe by source, then select a specific time window to plot. To prevent repeating work, we could save this “stacking” and time window selection code into a snippet, and use it as reusable code in other projects. 
+
+To try this out, return to your first notebook, and in the DCA menu, select **Insert Snippet**, select the following snippet that was created earlier for this lab, and run it:
+
+`stack_power_by_source`
+
+<p align="center">
+<img src = readme_images/import_stack.png width="800">
+</p>
+
+This code allows us to build an ares plot of production by all sources over the last day and week. The data frames are saved as `df_today` and `df_week`.
+
+Now, in the next cell, create a plot of power production in the last week by source.
+
+DataFrame: df_week
+Plot Type: Area
+X-axis: datetime
+Y-axis: Production
+Color: Source
+
+<p align="center">
+<img src = readme_images/area_plot_by_source.png width="800">
+</p>
+
+Change the theme if you’d like, and Run to build your area plot.
+
+### 5.3 Sharing Snippets with other Users and Projects
+
+This is great, but currently the new snippet is only available in the current project files. What if I want to make a snippet available to everyone in other projects? 
+
+There are two ways to save code snippets:
+
+1) As files in your project in the snippets folder.
+2) Saved to an external git repository that has been added as an Imported Code Repository to the project using the git service of your choice (Github, Gitlab etc.)
+
+If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. To save snippets to an external repository:
+
+1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
+2) Import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
+
+<p align="center">
+<img src = readme_images/add_git_repo.png width="800">
+</p>
+
+This example project has two git repositories for accessing snippets imported into the project. The first is a public repository, has no credentials, and can be used just for importing existing snippets. The second has read / write credentials attached, and can be used for reading, editing and saving new snippets.
+
+<p align="center">
+<img src = readme_images/snippet_repos.png width="800">
+</p>
+
+_Note that once you add an external repository to your Project, you will need to sync your current Workspace to the Project then create a new Workspace in the Project for the repository to be visible to Domino’s Code Assist._
