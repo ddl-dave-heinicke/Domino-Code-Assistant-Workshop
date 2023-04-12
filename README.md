@@ -154,3 +154,4 @@ Inspect the code at the bottonm, then hit **Run**
 </p>
 
 ## Section 5 - Code Snippets
+
