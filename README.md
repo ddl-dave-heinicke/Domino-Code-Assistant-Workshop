@@ -231,16 +231,20 @@ Depending on which theme you picked, your plot should look something like this:
 <img src = readme_images/week_plot.png width="800">
 </p>
 
-### 5.3 Sharing Snippets with other Users and Projects
+### 5.3 Sharing Snippets with Other Users and Projects
 
-This is great, but currently the new snippet is only available in the current project files. What if I want to make a snippet available to everyone in other projects? 
+This is great, but currently these snippets are only available in the current project files. What if I want to make a snippet available to everyone in other Projects, or even other instances of Domino? 
 
 There are two ways to save code snippets:
 
 1) As files in your project in the snippets folder.
-2) Saved to an external git repository that has been added as an Imported Code Repository to the project using the git service of your choice (Github, Gitlab etc.)
+2) Saved to an external repository that has been added as an **Imported Code Repository** to the project using the git service of your choice (Github, Gitlab etc.)
 
-If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. To save snippets to an external repository:
+If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. If you want to try adding a public snippets repository, add this Github repository to your Project (no credentials needed):
+
+(https://github.com/dominodatalab/low-code-assistant-snippets)
+
+To save snippets to an external repository:
 
 1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
 2) Import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
