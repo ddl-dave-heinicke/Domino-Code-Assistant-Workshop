@@ -103,7 +103,7 @@ For this tutorial, we’ll start with a small dataset in the project files saved
 
 You’ll notice most observations are at a 30-minute interval, but we’ve got some entries at odd intervals that have missing values from some sources. We can filter out null values using the DCA’s Transformations feature.
 
-In a new cell in your notebook, mouse over the DCA icon on the right and select Transformations. If you mouse over individual cells, you’ll see a popup appear next to the cell that allows you to **Filter values like this**. Hover over the `NaN` value in the CCGT column, and select the filter:
+In a new cell in your notebook, mouse over the DCA icon on the right and select **Transformations**. If you mouse over individual cells, you’ll see a popup appear next to the cell that allows you to **Filter values like this**. Hover over the `NaN` value in the CCGT column, and select the filter:
 
 <p align="center">
 <img src = readme_images/filer_nan.png width="800">
@@ -240,11 +240,13 @@ There are two ways to save code snippets:
 1) As files in your project in the snippets folder.
 2) Saved to an external repository that has been added as an **Imported Code Repository** to the project using the git service of your choice (Github, Gitlab etc.)
 
-If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. If you want to try adding a public, read-only snippets repository, add this Github repository to your Project (no credentials needed):
+If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. 
 
-https://github.com/dominodatalab/low-code-assistant-snippets
+If you want to try adding a public, read-only snippets repository, add this Github repository to your Project (no credentials needed).
 
 In your Project, navigate to the **Code** tab on the left, then the **Git Repositories** tab at the top. Click on **Add a New Repository**. 
+
+https://github.com/dominodatalab/low-code-assistant-snippets
 
 Paste the URI above, select **Github** as the Git Service Provider click **Add Repository**.
 
