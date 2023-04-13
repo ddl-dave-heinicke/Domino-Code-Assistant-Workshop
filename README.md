@@ -368,4 +368,4 @@ Navigate back to your Project, and select the App tab on the left. Once your App
 <img src = readme_images/view_app.png width="800">
 </p>
 
-Don't forget to Stop your workspace when you're done, and Happy app building!
+Don't forget to Stop your workspace when you're done, and happy app building!
