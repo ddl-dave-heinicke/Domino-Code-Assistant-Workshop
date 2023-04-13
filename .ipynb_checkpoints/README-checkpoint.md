@@ -280,18 +280,15 @@ Once you have an external snippets repo with read / write permissions added, you
 
 What if we wanted to build an interactive, hosted app that displays power generation live as it comes in from an external source? So far, we have worked with a static dataset, but what if we wanted our power generation plot to refresh on a schedule and display in an app? 
 
-You can accomplish this in Domino using two features: Scheduled Jobs and Hosted Apps. 
+You can accomplish this in Domino using two features: Scheduled Domino Jobs and Hosted Apps. 
 
-Scheduled jobs simply run a Python or R script from your Project in a container.
-
+Scheduled jobs simply run a Python or R script from your Project in a container. Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like - R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn your notebook into an app.
 
 ### 6.1 Domino Jobs 
 
-Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like - R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn the plots created in your notebook into an app.
+To get a sense how Domino Jobs work, first take a look at the Python script `pull_daily_data.py` in your project files. This is a script that pulls data from BMRS’s website, using an optional user-specified start and end date. It cleans up the raw data, then appends it to the generation history in the Project’s Domino Dataset.
 
-To get a sense how this works, first take a look at the Python script `pull_daily_data.py` in your project files. This is a script that pulls data from BMRS’s website, using a user-specified start and end date. It cleans up the raw data, then appends it to the generation history in the Project’s Domino Dataset.
-
-First, run it manually.
+By default, it pulls the last 24 hours of data. To get a longer history saved to start with, we'll stat by running this script manually.
 
 Navigate out of your workspace, back to the Project, and click on Jobs on your Projects right hand menu. Click on Run, and in the File Name or Command enter the following. We can pass arguments to the script if we like. In this example, we’ll tell it to pull data from January 1st up to today:
 
