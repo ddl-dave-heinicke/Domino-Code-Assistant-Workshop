@@ -321,30 +321,51 @@ Just like with the manual Job, enter the script you want to run. It defaults to 
 ```
 pull_daily_data.py
 ```
+Ensure your Run Environment matches your Workspace environment, and click **Next** until you're in the Schedule tab.
 
 <p align="center">
 <img src = readme_images/schedule_1.png width="800">
 </p>
 
-Click **Next** until you get top the **Schedule**, and have you Job run every day at midnight:
+Set your Job to run every day at midnight:
 
 <p align="center">
 <img src = readme_images/schedule_2.png width="800">
 </p>
 
-Click to the last window and Click **Create**. Not the power generation data will be updated every day at midnight.
+Click to the last window and Click **Create**. Now the power generation data will be updated every day at midnight.
+
 
 ### 6.3 Domino Code Assistant Live App 
 
 Now that we have continuously refreshed data being saved to our Project, we can build an app.
 
-Domino’s Code Assistant can convert the data, plots, widgets and markdown cells in our Notebook into an interactive App automatically. To try it out, navigate to your Workspace and open up the Notebook DCA_app.ipynb.
+Domino’s Code Assistant can convert the data, plots, widgets and markdown cells in our Notebook into an interactive App automatically. To try it out, navigate to your Workspace and open up the Notebook `DCA_app.ipynb`.
 
 This notebook repeats most of the steps we built previously, except that it reads out of our dataset that is updated each day using the scheduled job we created in Section 6.2.
 
-In the last cell, open up the DCA menu, and select App. Toggle on the plots, description and widgets on the left side, and arrange them however you’d like to see them. Once you’re happy with the arrangement, click Run.
+**Run all cells in the Notebook.**
+
+After running, in the last cell, open up the DCA menu, and select **App**. Toggle on the plots, description and widgets on the left side, and arrange them however you’d like to see them. 
+
+<p align="center">
+<img src = readme_images/toggle_on.png width="800">
+</p>
+
+Once you’re happy with the arrangement, click Run.
+
+Be sure to toggle on `widget_1`. This is a filter widget that allows the user to select one or more power sources to display in the power generation plot, and is one of the pre-built interactive widgets avaiable from DCA.
 
 DCA’s App builder has written the code for our interactive app. Click on Preview App to see how it would look in a browser window.
 
-If it looks good, click deploy app, wait a few minutes, and check your app out. This app can be shared with other people in your network. 
+If you want to customize the app - add more data, plots - anything you'd like, simply add additional cells to your notebook. Edit your final app cell from the DCA menu, and toggle your new cells on to add them in.
 
+If it looks good, click **Deploy App**, wait a few minutes, and check your app out. 
+
+Navigate back to your Project, and select the App tab on the left. Once your App is ready, click **View App** and play around with it. Note that every time you run (or Domino runs) the `pull_daily_data` job, the source data for this app is updated. By refreshing the browser window, you app will update on live data - no need to restart it, the underlying jobs and app refreshes are now all automated by Domino. 
+
+<p align="center">
+<img src = readme_images/view_app.png width="800">
+</p>
+
+Don't forget to Stop your workspace when you're done, and Happy app building!
