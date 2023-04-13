@@ -85,15 +85,15 @@ There are many ways to load a dataset into your notebook using Code Assist. To g
 
 * **Data Sources** Domino Data Sources allow you to browse [Domino Data Sources](https://docs.dominodatalab.com/en/latest/user_guide/fbb41f/data-sources/) that have been added to your Project. These could include cloud data stores like S3 buckets, ADLS, BigQuery, Snowflake etc., on-prem data sources such as an Oracle Database, or Trino's distributed query engine. Domino Data sources are accessed at the user level, and read/write credentials are stored in your user account when the connector is set up in a Project.
 
-* **Datasets** Domino Datasets are network file systems managed by Domino that can be snapshotted for reproducibility, and shared amongst users and / or projects. Domino Datasets are typically used for files that are too large to save in the project file system. 
+* **Datasets:** Domino Datasets are network file systems managed by Domino that can be snapshotted for reproducibility, and shared amongst users and / or projects. Domino Datasets are typically used for files that are too large to save in the project file system. 
 
-* **Project Files** Project files are typically used for code, visuals, notebooks and smaller datasets (<10GB). These files are continuously versioned each time you sync your workspace. 
+* **Project Files:** Project files are typically used for code, visuals, notebooks and smaller datasets (<10GB). These files are continuously versioned each time you sync your workspace. 
 
-* **Upload** DCA uploads support drag-and-drop uploads local files from your machine such as CSV files or local directories. 
+* **Upload:** DCA uploads support drag-and-drop uploads local files from your machine such as CSV files or local directories. 
 
-* **Quick Start** has some demo datasets for testing playing around with DCA.
+* **Quick Start:** has some demo datasets for testing playing around with DCA.
 
-For this tutorial, we’ll start with a small dataset in the project files saved in the “data” folder. Note at the bottom that it saves this dataset as "df" - you may want to change this if you plan to bring in multiple datasets into your notebook.
+For this tutorial, we’ll start with a small dataset in the project files saved in the `data` folder. Note at the bottom that it saves this dataset as `df` - you may want to change this if you plan to bring in multiple datasets into your notebook.
 
 <p align="center">
 <img src = readme_images/load_data.png width="800">
@@ -103,25 +103,25 @@ For this tutorial, we’ll start with a small dataset in the project files saved
 
 You’ll notice most observations are at a 30-minute interval, but we’ve got some entries at odd intervals that have missing values from some sources. We can filter out null values using the DCA’s Transformations feature.
 
-In a new cell in your notebook, mouse over the DCA icon on the right and select Transformations. If you mouse over individual cells, you’ll see a popup appear next to the cell that allows you to **“Filter values like this”**. Hover over the NaN value in the CCGT column, and select the filter:
+In a new cell in your notebook, mouse over the DCA icon on the right and select Transformations. If you mouse over individual cells, you’ll see a popup appear next to the cell that allows you to **Filter values like this**. Hover over the `NaN` value in the CCGT column, and select the filter:
 
 <p align="center">
 <img src = readme_images/filer_nan.png width="800">
 </p>
 
-Then, change the filter to **“!=”** NaN, and click **Apply**.
+Then, change the filter to **!=** NaN, and click **Apply**.
 
 <p align="center">
 <img src = readme_images/filter_nan_not_equal.png width="800">
 </p>
 
-If you scroll down to the bottom and toggle on **“Show Code”**, you can see the sample code that DCA has written. While you can always come back and edit this code, either manually or in the code assistant window, the preview is a handy feature for examining the sample code before inserting it into your notebook.
+If you scroll down to the bottom and toggle on **Show Code**, you can see the sample code that DCA has written. While you can always come back and edit this code, either manually or in the code assistant window, the preview is a handy feature for examining the sample code before inserting it into your notebook.
 
 <p align="center">
 <img src = readme_images/show_code.png width="800">
 </p>
 
-As a final step, go ahead and filter out the null values in the “OTHER” column in the spreadsheet. After applying the new transform, the following code should appear in the preview:
+As a final step, go ahead and filter out the null values in the OTHER column in the spreadsheet. After applying the new transform, the following code should appear in the preview:
 
 ```
 df = df.loc[df["CCGT"].notna()]
@@ -129,19 +129,19 @@ df = df.loc[df["OTHER"].notna()]
 df
 ```
 
-Go ahead and luck “Run” to insert the filtered null values.
+Go ahead and click **Run** to insert the filtered null values.
 
-_Additional: Feel free to load a demo dataset such as Palmer Penguins to test out the other features, such as group-by and aggregate._
+_Optional: Feel free to load a demo dataset such as Palmer Penguins to test out the other features, such as group-by and aggregate._
 
-You may be wondering if this method is inefficient for applying filters to really wide datasets with 100s columns - why not just use a method like `df.dropna()`? The answer is that you _should_ use features beyond what is offered out of the box with DCA. Code assist is just meant to be a starter, but you should feel free to build on features here, not be limited by the assistant. In fact, you can save commonly used code as custom snippets, which we’ll cover later. 
+You may be wondering if this method is inefficient for applying filters to really wide datasets with 100s columns - why not just use a method like `df.dropna()`? The answer is that you _should_ use features beyond what is offered out of the box with DCA. Code assist is just meant to be a starter, but you should feel free to build on features here and not be limited by the assistant. In fact, you can save commonly used code as custom snippets, which we’ll cover later. 
 
-## Section 4 - Data Transformations
+## Section 4 - Visualizations
 
 After cleaning up our data, the next step is to visualize it. 
 
 From the DCA menu, select **Visualizations**.
 
-Select the data frame name you saved the electric production data to, set the plot type to Area.
+Select the data frame name you saved `app_data.csv` to, and set the plot type to **Area**.
 
 Set the X-axis to “datetime” and the Y-axis to “CCGT” (or any column of your choice).
 
@@ -153,6 +153,8 @@ Inspect the code at the bottonm, then hit **Run**
 <img src = readme_images/area_plot.png width="800">
 </p>
 
+You now have an Area chart of power generated by your selected source. Note that this is just one of many types of plots, and you can customize the plot from here - feel free to modify the Python (or R) code DCA has written for you.
+
 ## Section 5 - Code Snippets
 
 So far, we have relied on DCA’s existing features to apply transforms or plot our data. But what if we want to do something DCA doesn’t do out of the box? For example, what if we want to do time-based aggregations, or plot electric production by source all on a single area plot?
@@ -161,7 +163,7 @@ For these types of custom tasks, Domino Code Assist has code snippets.
 
 ### 5.1 Saving Snippets to a Project
 
-First, remember back to when we removed rows with null values. If we had many columns, and wanted to remove any row that had a null value in any column, we could use the following panda’s code:
+First, remember back to when we removed rows with null values. If we had many columns, rather than selecting null values in columns one by one, we could use the following pandas code. This drops any row that contains at least one null value in any column:
 
 ```
 df = df.dropna(axis=0, how='any')
@@ -185,12 +187,15 @@ Give your snippet the name `drop_null_rows`, select the current project as your 
 To test it out, create a new Notebook, and repeat the first steps, but with the new snippet:
 
 1) Initialize code assist in the first cell
-2) Import app_data.csv from Project Files in the second cell
-3) Insert your new drop_null_rows code in the third cell
+2) Import `app_data.csv` from Project Files in the second cell
+3) In the DCA menu, go to **Insert snippet**, and select your new `drop_null_rows` code to insert in the third cell
 
 <p align="center">
 <img src = readme_images/drop_null_example.png width="800">
 </p>
+
+Close out of your test notebook, and delete it if you'd like.
+
 
 ### 5.2 Importing an Existing Snippet
 
