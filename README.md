@@ -290,7 +290,7 @@ To get a sense how Domino Jobs work, first take a look at the Python script `pul
 
 By default, it pulls the last 24 hours of data. To get a longer history saved to start with, we'll stat by running this script manually.
 
-Navigate out of your workspace, back to the Project, and click on Jobs on your Projects right hand menu. Click on Run, and in the File Name or Command enter the following. We can pass arguments to the script if we like. In this example, we’ll tell it to pull data from January 1st up to today:
+Navigate out of your workspace, back to the Project, and click on Jobs on your Project's left hand menu. Click on Run, and in the File Name or Command enter the following. We can pass arguments to the script if we like. In this example, we’ll tell it to pull data from January 1st up to today:
 
 ```Pull_daily_data.py '--start=2023-01-01 00:00:00'```
 
