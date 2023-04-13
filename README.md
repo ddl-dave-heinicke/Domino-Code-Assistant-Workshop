@@ -314,11 +314,13 @@ Click into the **Results** tab. Here you can see any data, saved figures, and ou
 
 If we want to run this every day, we can use Domino to run the Job on a schedule. In the Jobs section of your Project, navigate to the **Schedules** tab, and click **Schedule a Job**.
 
-Call your job `Pull Daily Data`
+Call your job `Pull Daily Data`.
 
 Just like with the manual Job, enter the script you want to run. It defaults to pulling the last 24 hours of data, so no need to pass it a start time: 
 
-`Pull_daily_data.py`
+```
+pull_daily_data.py
+```
 
 <p align="center">
 <img src = readme_images/schedule_1.png width="800">
