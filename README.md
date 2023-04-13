@@ -245,3 +245,73 @@ This example project has two git repositories for accessing snippets imported in
 </p>
 
 _Note that once you add an external repository to your Project, you will need to sync your current Workspace to the Project then create a new Workspace in the Project for the repository to be visible to Domino’s Code Assist._
+
+## 6.0 Building a Live App with Domino Code Assistant
+
+What if we wanted to build an interactive, hosted app that displays power generation live as it comes in from an external source? So far, we have worked with a static dataset, but what if we wanted our power generation plot to refresh on a schedule and display in an app? 
+
+You can accomplish this in Domino using two features: Scheduled Jobs and Hosted Apps. 
+
+Scheduled jobs simply run a Python or R script from your Project in a container.
+
+
+### 6.1 Domino Jobs 
+
+Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like - R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn the plots created in your notebook into an app.
+
+To get a sense how this works, first take a look at the Python script `pull_daily_data.py` in your project files. This is a script that pulls data from BMRS’s website, using a user-specified start and end date. It cleans up the raw data, then appends it to the generation history in the Project’s Domino Dataset.
+
+First, run it manually.
+
+Navigate out of your workspace, back to the Project, and click on Jobs on your Projects right hand menu. Click on Run, and in the File Name or Command enter the following. We can pass arguments to the script if we like. In this example, we’ll tell it to pull data from January 1st up to today:
+
+`Pull_daily_data.py '--start=2023-01-01 00:00:00'`
+
+Ensure your Run Environment matches your Workspace environment, and click on Run.
+
+<p align="center">
+<img src = readme_images/manual_job.png width="800">
+</p>
+
+In the background, Domino is executing our script as a job - it will ping BMRS’s site, download data, clean it up and save it in our Project folder. This may take a minute, but the status should change from blue to green when the job is complete.
+
+Click into the `Pull_daily_data` job run.
+
+In the **Details** tab of the job run note that the compute environment and hardware tier are tracked to document not only who ran the experiment and when, but what versions of the code, software, and hardware were executed. 
+
+Click into the **Results** tab. Here you can see any data, saved figures, and outputs from the script that was run.
+
+### 6.2 Scheduled Jobs 
+
+If we want to run this every day, we can use Domino to put the Job on a schedule. In the Jobs tab, navigate to the **Schedules** tab, and click **Schedule a Job**.
+
+Just like with the manual Job, enter the script you want to run. It defaults to pulling the last 24 hours of data, so no need to pass it a start time: 
+
+`Pull_daily_data.py`
+
+<p align="center">
+<img src = readme_images/schedule_1.png width="800">
+</p>
+
+Click **Next** until you get top the **Schedule**, and have you Job run every day at midnight:
+
+<p align="center">
+<img src = readme_images/schedule_2.png width="800">
+</p>
+
+Click to the last window and Click **Create**. Not the power generation data will be updated every day at midnight.
+
+### 6.3 Domino Code Assistant Live App 
+
+Now that we have continuously refreshed data being saved to our Project, we can build an app.
+
+Domino’s Code Assistant can convert the data, plots, widgets and markdown cells in our Notebook into an interactive App automatically. To try it out, navigate to your Workspace and open up the Notebook DCA_app.ipynb.
+
+This notebook repeats most of the steps we built previously, except that it reads out of our dataset that is updated each day using the scheduled job we created in Section 6.2.
+
+In the last cell, open up the DCA menu, and select App. Toggle on the plots, description and widgets on the left side, and arrange them however you’d like to see them. Once you’re happy with the arrangement, click Run.
+
+DCA’s App builder has written the code for our interactive app. Click on Preview App to see how it would look in a browser window.
+
+If it looks good, click deploy app, wait a few minutes, and check your app out. This app can be shared with other people in your network. 
+
