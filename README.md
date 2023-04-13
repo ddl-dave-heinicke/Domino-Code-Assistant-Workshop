@@ -260,7 +260,7 @@ Open up your Tutorial Notebook again, run all cells, then navigate to the DCA **
 
 **Optional:** If you'd like to save save your snippets to an external repository, you'll need to add or create a git repository that you have read write permissions for. The steps are: 
 
-1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
+1) Save git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
 2) Just like with the public repo, import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
 
 
@@ -282,7 +282,7 @@ What if we wanted to build an interactive, hosted app that displays power genera
 
 You can accomplish this in Domino using two features: Scheduled Domino Jobs and Hosted Apps. 
 
-Scheduled jobs simply run a Python or R script from your Project in a container. Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like - R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn your notebook into an app.
+Scheduled jobs simply run a Python or R script from your Project in a container. Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like: R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn your notebook into an app.
 
 ### 6.1 Domino Jobs 
 
