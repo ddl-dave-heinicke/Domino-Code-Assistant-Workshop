@@ -284,7 +284,7 @@ You can accomplish this in Domino using two features: Scheduled Domino Jobs and 
 
 Scheduled jobs simply run a Python or R script from your Project in a container. Hosted apps make interactive apps available to other users in your organization via a web browser. You can write an app in any language you like: R Shiny, Flask, Dash, Streamlit and others, or you can use the Domino Code Assistant to turn your notebook into an app.
 
-### 6.1 Domino Jobs 
+### 6.1 Domino Jobs
 
 To get a sense how Domino Jobs work, first take a look at the Python script `pull_daily_data.py` in your project files. This is a script that pulls data from BMRS’s website, using an optional user-specified start and end date. It cleans up the raw data, then appends it to the generation history in the Project’s Domino Dataset.
 
