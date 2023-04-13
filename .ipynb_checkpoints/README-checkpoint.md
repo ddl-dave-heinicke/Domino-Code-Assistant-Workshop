@@ -35,7 +35,7 @@ For this lab, we'll use a Compute Environment  with DCA already installed, which
 <img src = readme_images/default_env.png width="800">
 </p>
 
-For details on how to install Domino Code Assistant in a Workspace or Project rather than environment, see the [DCA Install Documentation](https://dominodatalab.github.io/domino-code-assist-docs/latest/install/#install-in-a-workspace)
+For details on how to install Domino Code Assistant in a Workspace or Project rather than environment, see the [DCA Install Documentation](https://dominodatalab.github.io/domino-code-assist-docs/latest/install/#install-in-a-workspace).
 
 ### 1.2 Initializing DCA in a Notebook: Python
 
