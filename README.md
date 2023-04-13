@@ -242,7 +242,7 @@ There are two ways to save code snippets:
 
 If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. 
 
-If you want to try adding a public, read-only snippets repository, add this Github repository to your Project (no credentials needed).
+If you want to try adding a public, read-only snippets repository, add Domino's code assistant snippets repository to your Project (no credentials needed).
 
 In your Project, navigate to the **Code** tab on the left, then the **Git Repositories** tab at the top. Click on **Add a New Repository**. 
 
