@@ -240,18 +240,25 @@ There are two ways to save code snippets:
 1) As files in your project in the snippets folder.
 2) Saved to an external repository that has been added as an **Imported Code Repository** to the project using the git service of your choice (Github, Gitlab etc.)
 
-If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. If you want to try adding a public snippets repository, add this Github repository to your Project (no credentials needed):
+If you add a public repository, you will have read-only access to snippets, meaning you can pull snippets in, but not save new snippets from your current workspace. If you want to try adding a public, read-only snippets repository, add this Github repository to your Project (no credentials needed):
 
-(https://github.com/dominodatalab/low-code-assistant-snippets)
+https://github.com/dominodatalab/low-code-assistant-snippets
 
-To save snippets to an external repository:
+In your Project, navigate to the **Code** tab on the left, then the **Git Repositories** tab at the top. Click on **Add a New Repository**. 
 
-1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
-2) Import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
+Paste the URI above, leave everything else as is and click **Add Repository**.
 
 <p align="center">
 <img src = readme_images/add_git_repo.png width="800">
 </p>
+
+_Note that once you add an external repository to your Project, you need to create a new Workspace. Sync your current Workspace to the Project, then create a new Workspace in the Project for the imported repository to be visible to Domino’s Code Assist._
+
+To save your snippets to an external repository, you'll
+
+1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
+2) Import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
+
 
 This example project has two git repositories for accessing snippets imported into the project. The first is a public repository, has no credentials, and can be used just for importing existing snippets. The second has read / write credentials attached, and can be used for reading, editing and saving new snippets.
 
@@ -259,7 +266,7 @@ This example project has two git repositories for accessing snippets imported in
 <img src = readme_images/snippet_repos.png width="800">
 </p>
 
-_Note that once you add an external repository to your Project, you will need to sync your current Workspace to the Project then create a new Workspace in the Project for the repository to be visible to Domino’s Code Assist._
+
 
 ## 6.0 Building a Live App with Domino Code Assistant
 
