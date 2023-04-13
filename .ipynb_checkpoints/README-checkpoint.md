@@ -256,7 +256,9 @@ _Note that once you add an external repository to your Project, you need to crea
 
 Open up your Tutorial Notebook again, run all cells, then navigate to the DCA **Insert Snippets** menu in a new cell. You'll see an new `python` or `r` folder with the imported snippets now available.
 
-To save your snippets to an external repository, you'll
+
+
+If you'd like to save save your snippets to an external repository, you'll need to add or create a git repository that you have read write permissions for. The steps are: 
 
 1) Save your git credentials in your user account that give you read / write access to the snippets repository. Detailed instructions [here](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/#step-1-create-credentials)
 2) Import the Git repo as an external repository to your Project and attach your read / write credentials. Detailed instructions [here](https://dominodatalab.github.io/domino-code-assist-docs/latest/project/files/)
