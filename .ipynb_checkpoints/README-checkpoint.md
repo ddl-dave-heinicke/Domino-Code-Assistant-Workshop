@@ -273,7 +273,7 @@ This example project has two git repositories for accessing snippets imported in
 Once you have an external snippets repo with read / write permissions added, you'll have the option to save snippets locally or in the external repo when you save them:
 
 <p align="center">
-<img src = readme_images/snippets_repo_example.png width="800">
+<img src = readme_images/snippets_repo_example.png width="200">
 </p>
 
 ## 6.0 Building a Live App with Domino Code Assistant
