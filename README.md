@@ -211,19 +211,25 @@ To try this out, return to your first notebook, and in the DCA menu, select **In
 
 This code allows us to build an ares plot of production by all sources over the last day and week. The data frames are saved as `df_today` and `df_week`.
 
-Now, in the next cell, create a plot of power production in the last week by source.
+Now, in the next cell, create a plot of power production in the last week by source. From the DCA menu, select **Visualizations**, and fill out the following cells:
 
 * DataFrame: df_week
 * Plot Type: Area
 * X-axis: datetime
-* Y-axis: Production
+* Y-axis: Production (MW)
 * Color: Source
 
 <p align="center">
 <img src = readme_images/area_plot_by_source.png width="800">
 </p>
 
-Change the theme if you’d like, and Run to build your area plot.
+Change the theme if you’d like, and **Run** to build your area plot.
+
+Depending on which theme you picked, your plot should look something like this:
+
+<p align="center">
+<img src = readme_images/week_plot.png width="800">
+</p>
 
 ### 5.3 Sharing Snippets with other Users and Projects
 
