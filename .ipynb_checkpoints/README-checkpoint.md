@@ -290,29 +290,31 @@ To get a sense how Domino Jobs work, first take a look at the Python script `pul
 
 By default, it pulls the last 24 hours of data. To get a longer history saved to start with, we'll stat by running this script manually.
 
-Navigate out of your workspace, back to the Project, and click on Jobs on your Project's left hand menu. Click on Run, and in the File Name or Command enter the following. We can pass arguments to the script if we like. In this example, we’ll tell it to pull data from January 1st up to today:
+Navigate out of your workspace, back to the Project, and click on Jobs on your Project's left hand menu. Click on Run, and in the File Name or Command enter the following command. We’ll tell it to pull data from January 1st up to today:
 
 ```
-Pull_daily_data.py '--start=2023-01-01 00:00:00'
+pull_daily_data.py '--start=2023-01-01 00:00:00'
 ```
 
-Ensure your Run Environment matches your Workspace environment, and click on Run.
+Ensure your Run Environment matches your Workspace environment, and click on **Start**.
 
 <p align="center">
 <img src = readme_images/manual_job.png width="800">
 </p>
 
-In the background, Domino is executing our script as a job - it will ping BMRS’s site, download data, clean it up and save it in our Project folder. This may take a minute, but the status should change from blue to green when the job is complete.
+In the background, Domino is executing our script as a job - it will ping BMRS’s site, download data, clean it up and save it in a Domino Dataset in our Project. This may take a minute, but the status should change from blue to green when the job is complete.
 
-Click into the `Pull_daily_data` job run.
+Click into the `pull_daily_data` job run.
 
-In the **Details** tab of the job run note that the compute environment and hardware tier are tracked to document not only who ran the experiment and when, but what versions of the code, software, and hardware were executed. 
+In the **Details** tab on the right, note that the compute environment and hardware tier are tracked to document not only who ran the job, but when it was run and what versions of the code, software, and hardware were executed. 
 
 Click into the **Results** tab. Here you can see any data, saved figures, and outputs from the script that was run.
 
 ### 6.2 Scheduled Jobs 
 
-If we want to run this every day, we can use Domino to put the Job on a schedule. In the Jobs tab, navigate to the **Schedules** tab, and click **Schedule a Job**.
+If we want to run this every day, we can use Domino to run the Job on a schedule. In the Jobs section of your Project, navigate to the **Schedules** tab, and click **Schedule a Job**.
+
+Call your job `Pull Daily Data`
 
 Just like with the manual Job, enter the script you want to run. It defaults to pulling the last 24 hours of data, so no need to pass it a start time: 
 
