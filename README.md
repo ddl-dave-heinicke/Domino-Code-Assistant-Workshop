@@ -246,13 +246,15 @@ https://github.com/dominodatalab/low-code-assistant-snippets
 
 In your Project, navigate to the **Code** tab on the left, then the **Git Repositories** tab at the top. Click on **Add a New Repository**. 
 
-Paste the URI above, leave everything else as is and click **Add Repository**.
+Paste the URI above, select **Github** as the Git Service Provider click **Add Repository**.
 
 <p align="center">
 <img src = readme_images/add_git_repo.png width="800">
 </p>
 
-_Note that once you add an external repository to your Project, you need to create a new Workspace. Sync your current Workspace to the Project, then create a new Workspace in the Project for the imported repository to be visible to Domino’s Code Assist._
+_Note that once you add an external repository to your Project, you need to create a new Workspace. Sync your current Workspace to the Project, stop it, then create a new Workspace in the Project for the imported repository to be visible to Domino’s Code Assist._
+
+Open up your Tutorial Notebook again, run all cells, then navigate to the DCA **Insert Snippets** menu in a new cell. You'll see an new `python` or `r` folder with the imported snippets now available.
 
 To save your snippets to an external repository, you'll
 
