@@ -199,7 +199,7 @@ Close out of your test notebook, and delete it if you'd like.
 
 ### 5.2 Importing an Existing Snippet
 
-What if we wanted to plot production by all sources on the same area plot? We could write a function to stack the dataframe by source, then select a specific time window to plot. To prevent repeating work, we could save this “stacking” and time window selection code into a snippet, and use it as reusable code in other projects. 
+What if we wanted to plot production by all sources on the same area plot? We could write a function to stack the dataframe by source, then select a specific time window to plot. DCA doesn't do this out of the box, but fortunately this code already exists from a different project. To prevent repeating work, we could save this “stacking” and time window selection code into a snippet, and make it easily reusable code in other projects.
 
 To try this out, return to your first notebook, and in the DCA menu, select **Insert Snippet**, select the following snippet that was created earlier for this lab, and run it:
 
@@ -213,11 +213,11 @@ This code allows us to build an ares plot of production by all sources over the 
 
 Now, in the next cell, create a plot of power production in the last week by source.
 
-DataFrame: df_week
-Plot Type: Area
-X-axis: datetime
-Y-axis: Production
-Color: Source
+* DataFrame: df_week
+* Plot Type: Area
+* X-axis: datetime
+* Y-axis: Production
+* Color: Source
 
 <p align="center">
 <img src = readme_images/area_plot_by_source.png width="800">
